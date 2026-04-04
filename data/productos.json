@@ -1,0 +1,40 @@
+
+
+[
+  {
+    "id": 1,
+    "nombre": "Monitor",
+    "precio": 15000,
+    "imagen": "/img/prueba.jpeg"
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse Pad",
+    "precio": 8000,
+    "imagen": "/img/mousepad.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Auricular",
+    "precio": 25000,
+    "imagen": "/img/auricular.jpeg"
+  },
+  {
+    "id": 4,
+    "nombre": "Silla Gamer",
+    "precio": 30000,
+    "imagen": "/img/silla.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Kit Teclado y Mouse",
+    "precio": 20000,
+    "imagen": "/img/tecladoymouse.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Gabinete Gamer",
+    "precio": 22000,
+    "imagen": "/img/gabinete.jpg"
+  }
+]

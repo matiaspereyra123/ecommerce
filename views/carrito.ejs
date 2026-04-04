@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+
+<h1>Carrito de compras</h1>
+
+<ul>
+  <% carrito.forEach(p => { %>
+    <li>
+      <%= p.nombre %> - $<%= p.precio %>
+            <!-- Formulario para eliminar producto usando DELETE -->
+      <form action="/carrito/<%= p.id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Eliminar</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<!-- Calculamos el total sumando precios -->
+
+<p>Total: 
+  <%= carrito.reduce((acc, p) => acc + p.precio, 0) %>
+</p>
+
+<%- include("partials/footer") %>
+
+
+
