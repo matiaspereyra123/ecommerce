@@ -10,7 +10,13 @@
     <div>
       <h2><%= producto.nombre %></h2>
       <p>$<%= producto.precio %></p>
-      <img src="<%= producto.imagen %>" width="150">
+
+
+       <a href="/producto/<%=producto.id%>">
+
+        <img src="<%= producto.imagen %>" width="150">
+       </a>
+      
 
       <!-- Checkbox para seleccionar producto -->
       <input type="checkbox" name="productos[]" value="<%= producto.id %>">

@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<h1>Carrito de compras</h1>
+
+<form action="/carrito" method="POST">
+
+    <div>
+      <h2><%= producto.nombre %></h2>
+      <p>$<%= producto.precio %></p>
+      <img src="<%= producto.imagen %>" width="150">
+
+      <!-- Checkbox para seleccionar producto -->
+      <input type="checkbox" name="productos[]" value="<%= producto.id %>">
+      <label>Agregar al carrito</label>
+    </div>
+    <button type="submit">Agregar seleccionados al carrito</button>
+</form>
+
+
+<%- include("partials/footer") %>

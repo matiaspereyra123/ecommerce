@@ -2,22 +2,37 @@
 
 <h1>Carrito de compras</h1>
 
-<ul>
-  <% carrito.forEach(p => { %>
-    <li>
-      <%= p.nombre %> - $<%= p.precio %>
-            <!-- Formulario para eliminar producto usando DELETE -->
-      <form action="/carrito/<%= p.id %>?_method=DELETE" method="POST" style="display:inline;">
-        <button type="submit">Eliminar</button>
-      </form>
-    </li>
-  <% }) %>
-</ul>
-<!-- Calculamos el total sumando precios -->
+<% carrito.forEach(item => { %>
 
-<p>Total: 
-  <%= carrito.reduce((acc, p) => acc + p.precio, 0) %>
-</p>
+  <img src="<%= item.producto.imagen %>" width="150">
+
+  <p>
+    <%= item.producto.nombre %> 
+    - $<%= item.producto.precio %> 
+
+    <!-- RESTAR -->
+    <form action="/carrito/restar/<%= item.producto.id %>" method="POST" style="display:inline;">
+      <button type="submit">➖</button>
+    </form>
+
+    <!-- CANTIDAD -->
+    Cantidad: <%= item.cantidad %>
+
+    <!-- SUMAR -->
+    <form action="/carrito/sumar/<%= item.producto.id %>" method="POST" style="display:inline;">
+      <button type="submit">➕</button>
+    </form>
+
+    <!-- ELIMINAR -->
+    <form action="/carrito/<%= item.producto.id %>?_method=DELETE" method="POST" style="display:inline;">
+      <button type="submit">🗑</button>
+    </form>
+
+  </p>
+
+<% }) %>
+
+<h2>Total: $<%= total %></h2>
 
 <%- include("partials/footer") %>
 
