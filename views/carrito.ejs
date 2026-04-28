@@ -1,17 +1,24 @@
 <%- include("partials/header") %>
 
 <h1>Carrito de compras</h1>
+<table border="1">
+  <tr>
+    <th>Producto</th>
+    <th>Detalle</th>
+    <th>Precio</th>
+    <th>Stock</th>
+  </tr>
 
 <% carrito.forEach(item => { %>
-
-  <img src="<%= item.producto.imagen %>" width="150">
+<tr>
+  <td><img src="<%= item.producto.imagen %>" width="150"></td>
+  
 
   <p>
-    <%= item.producto.nombre %> 
-    - $<%= item.producto.precio %> 
-
-    <!-- RESTAR -->
-    <form action="/carrito/restar/<%= item.producto.id %>" method="POST" style="display:inline;">
+    <td> <%= item.producto.nombre %>  </td>
+ 
+    
+<td>     <form action="/carrito/restar/<%= item.producto.id %>" method="POST" style="display:inline;">
       <button type="submit">➖</button>
     </form>
 
@@ -26,14 +33,19 @@
     <!-- ELIMINAR -->
     <form action="/carrito/<%= item.producto.id %>?_method=DELETE" method="POST" style="display:inline;">
       <button type="submit">🗑</button>
-    </form>
+    </form> </td>
+    <!-- RESTAR -->
+  <td> $<%= item.producto.precio %> </td>
 
   </p>
-
+</tr>
 <% }) %>
+  <tr>
+    <td colspan="3" style="text-align:right"><h2> <strong>Total</strong></h2></td>
+    <td  style="text-align:right"><strong> <h2>$<%= total %></h2> </strong></td>
+  </tr>
 
-<h2>Total: $<%= total %></h2>
-
+</table>
 <%- include("partials/footer") %>
 
 
