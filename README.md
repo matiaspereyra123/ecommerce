@@ -94,6 +94,10 @@ http://localhost:3000
 
 ---
 
+## 📓 Proceso de desarrollo
+
+Podés ver el paso a paso del desarrollo en el archivo DEVLOG.md
+
 ## 📌 Próximas mejoras
 
 * Implementar sesiones (carrito por usuario)
