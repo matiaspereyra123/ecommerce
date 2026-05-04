@@ -8,7 +8,7 @@ const PORT=3000;
 
 // Importa el archivo productos.json  desde la carpeta data
 // y lo asigna a la constante 'productos' para usarlo en el código
-const { carrito, productos } = require("./data/store");
+//const { carrito, productos } = require("./data/store");
 
 // Habilita el middleware para procesar datos enviados desde formularios HTML.
 // Con extended:true usa la librería 'qs', lo que permite interpretar objetos y arrays en req.body.
